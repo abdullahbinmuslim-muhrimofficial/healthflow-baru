@@ -1,0 +1,35 @@
+workflows:
+  default-workflow:
+    name: HealthFlow APK Release Build
+    instance_type: mac_mini_m1
+    
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch:
+        patterns:
+          - main
+    
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      
+      - name: Build APK
+        script: flutter build apk --release
+    
+    artifacts:
+      - build/app/outputs/flutter-app-release.apk
+    
+    publishing:
+      email:
+        recipients:
+          - your.email@gmail.com
+        notify:
+          success: true
+          failure: true
