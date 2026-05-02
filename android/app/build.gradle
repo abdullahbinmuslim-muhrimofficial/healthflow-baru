@@ -39,8 +39,13 @@ android {
         versionName flutterVersionName
     }
 
-    buildTypes {
+  buildTypes {
         release {
             signingConfig signingConfigs.debug
         }
     }
+} // Jangan lupa tutup kurung kurawal untuk 'android'
+
+flutter {
+    source '../..'
+}
