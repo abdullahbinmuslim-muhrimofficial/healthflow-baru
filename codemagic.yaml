@@ -1,7 +1,6 @@
 workflows:
   android-release:
     name: HealthFlow APK Release
-    instance_type: linux  # ← ganti dari mac_mini_m1
     environment:
       flutter: stable
     scripts:
