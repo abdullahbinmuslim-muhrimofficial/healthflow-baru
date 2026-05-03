@@ -879,7 +879,7 @@ class ZakatPage extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text('Dana Zakat: Rp ${fmt(state.jar3)}', style: const TextStyle(color: Colors.white70)),
                   const SizedBox(height: 8),
-                  if (!reachedNisab) Text('Butuh: Rp ${fmt(gapToNisab)} lagi', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                  if (!reachedNisab) Text('Butuh: Rp ${fmt(gapToNisab.toDouble())} lagi', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                   if (reachedNisab) Text('Zakat 2.5%: Rp ${fmt(zakatAmount)}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
                 ],
               ),
